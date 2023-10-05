@@ -28,3 +28,18 @@ function playRound(playerSelection, computerSelection) {
     
     return rslt; 
   }
+
+function game(){
+    let losses = 0, wins = 0;
+    for (let i = 0; i < 5 ; i++) {
+        const playerSelection = playerChoice();
+        const computerSelection = getComputerChoice();
+        const roundResult = playRound(playerSelection, computerSelection);
+        console.log(roundResult);
+        if (roundResult.startsWith("You win")) wins++;
+        else if (roundResult.startsWith("You lose")) losses++;
+    }
+    if (wins > losses) return "You Won Overall!";
+    else if (wins < losses) return "You lost overall!";
+    else return "It's a tie overall!";
+}
