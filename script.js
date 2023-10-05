@@ -8,14 +8,9 @@ function getComputerChoice (){
     return msg;
 }
 
-function playerSelection() {
+function playerChoice() {
     let choice = prompt("Choose what to play with: Rock, Paper, or Scissors:").toLowerCase();
-
-    if (choice === "rock" || choice === "paper" || choice === "scissors") {
-        return choice;
-    } else {
-        console.log("Invalid choice. Please choose Rock, Paper, or Scissors. Reload the page");
-    }
+    return choice;
 }
 
 function playRound(playerSelection, computerSelection) {
@@ -29,6 +24,7 @@ function playRound(playerSelection, computerSelection) {
     else if (playerSelection == "scissors" && computerSelection == "scissors") rslt = "Draw! You both chose the same thing";
     else if (playerSelection == "scissors" && computerSelection == "paper") rslt = "You Win! Scissors beats paper";
     else if (playerSelection == "scissors" && computerSelection == "rock") rslt = "You lose! Rock beats scissors";
+    else rslt = "some error happened, play again."
     
     return rslt; 
   }
